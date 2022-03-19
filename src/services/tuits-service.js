@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const TUITS_API = "https://hw3ks.herokuapp.com/api/tuits";
-const USERS_API = "https://hw3ks.herokuapp.com/api/users";
+const TUITS_API = "http://localhost:4000/api/tuits";
+const USERS_API = "http://localhost:4000/api/users";
 
 export const findAllTuits = () =>
     axios.get(TUITS_API)
@@ -25,5 +25,9 @@ export const updateTuit = (tid, tuit) =>
 
 export const deleteTuit = (tid) =>
     axios.delete(`${TUITS_API}/${tid}`)
+        .then(response => response.data);
+
+export const deleteByTuit = (tuit) =>
+    axios.get(`${TUITS_API}/tuit/${tuit}/delete`)
         .then(response => response.data);
 

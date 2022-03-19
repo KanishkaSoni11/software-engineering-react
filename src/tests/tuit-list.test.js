@@ -29,7 +29,7 @@ test('tuit list renders async', async () => {
         <HashRouter>
             <Tuits tuits={tuits}/>
         </HashRouter>);
-    const linkElement = screen.getByText(/hello/i);
+    const linkElement = screen.getByText(/kan/i);
     expect(linkElement).toBeInTheDocument();
 })
 

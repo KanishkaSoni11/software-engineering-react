@@ -21,14 +21,14 @@ describe('createTuit', () => {
 
     // setup test before running test
     beforeAll(async () => {
-        // remove any/all users to make sure we create it in the test
+        // remove any user and tuit before creating for test
         await deleteByTuit(tuitRipley.tuit);
         return deleteUsersByUsername(ripley.username);
     })
 
     // clean up after test runs
     afterAll(async () => {
-        // remove any data we created
+        // remove any user and tuit before creating for test
         await deleteByTuit(tuitRipley.tuit);
         return deleteUsersByUsername(ripley.username);
     })
@@ -54,15 +54,14 @@ describe('can delete tuit wtih REST API', () => {
 
     // setup test before running test
     beforeAll(async () => {
-        // insert the sample user we then try to remove
-        //const newUser = await createUser(ripley);
+        // remove any user and tuit before creating for test
         await deleteByTuit(tuitRipley.tuit);
         return deleteUsersByUsername(ripley.username);
     })
 
     // clean up after test runs
     afterAll(async () => {
-        // remove any data we created
+        // remove any user and tuit before creating for test
         await deleteByTuit(tuitRipley.tuit);
         return deleteUsersByUsername(ripley.username);
     })
@@ -87,15 +86,14 @@ describe('can retrieve a tuit by their primary key with REST API', () => {
 
     // setup test before running test
     beforeAll(async () => {
-        // insert the sample user we then try to remove
-        //const newUser = await createUser(ripley);
+        // remove any user and tuit before creating for test
         await deleteByTuit(tuitRipley.tuit);
         return deleteUsersByUsername(ripley.username);
     })
 
     // clean up after test runs
     afterAll(async () => {
-        // remove any data we created
+        // remove any user and tuit before creating for test
         await deleteByTuit(tuitRipley);
         return deleteUsersByUsername(ripley.username);
     })
@@ -133,15 +131,15 @@ describe('can retrieve all tuits with REST API', () => {
     ]
 
     beforeAll(async () => {
-        //await Promise.all(tuits.map(async (tuit) => await deleteByTuit(tuits.tuit)));
+        // remove any user and tuit before creating for test
         tuits.forEach(tuit1 => {
              deleteByTuit(tuit1.tuit);
         })
         return deleteUsersByUsername(ripley.username);
     })
-
+// clean up after test runs
     afterAll(async () => {
-        //await Promise.all(tuits.map(async (tuit) => await deleteTuit(tuit._id)));
+        // remove any user and tuit before creating for test
         tuits.forEach(tuit1 => {
             deleteByTuit(tuit1.tuit);
         })

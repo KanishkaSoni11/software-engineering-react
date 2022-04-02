@@ -16,4 +16,5 @@ const MyDislikes = () => {
         </div>
     );
 };
+
 export default MyDislikes;

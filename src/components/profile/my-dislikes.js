@@ -1,8 +1,19 @@
+import Tuits from "../tuits";
+import * as service from "../../services/likes-service";
+import {useEffect, useState} from "react";
+
 const MyDislikes = () => {
-    return(
+    const [unlikedTuits, setUnlikedTuis] = useState([]);
+    const findTuitsIUnLike = () =>
+        service.findAllTuitsUnLikedByUser("me")
+            .then((tuits) => setUnlikedTuis(tuits));
+    useEffect(findTuitsIUnLike, []);
+
+    return (
         <div>
-            <h1>My Dislikes</h1>
+            <h2>My Dislikes</h2>
+            <Tuits tuits={unlikedTuits} refreshTuits={findTuitsIUnLike}/>
         </div>
-    )
-}
+    );
+};
 export default MyDislikes;

@@ -39,7 +39,6 @@ const TuitStats = ({
               <span className="ttr-stats-unlikes">{tuit.stats && tuit.stats.unlikes}</span>
           </span>
             </div>
-
             <div className="col">
                 <i className="far fa-inbox-out"></i>
             </div>

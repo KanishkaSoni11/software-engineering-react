@@ -7,7 +7,7 @@ const TUITS_API = `${BASE_URL}/api/tuits`;
 const api = axios.create({
   withCredentials: true
 });
-//
+
 export const findAllTuitsLikedByUser = (userId) =>
     api.get(`${USERS_API}/${userId}/likes`)
         .then(response => response.data);

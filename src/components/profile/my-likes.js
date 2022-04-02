@@ -16,4 +16,5 @@ const MyLikes = () => {
         </div>
     );
 };
+
 export default MyLikes;
